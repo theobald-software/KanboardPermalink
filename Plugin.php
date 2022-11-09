@@ -1,35 +1,56 @@
 <?php
 
-namespace Kanboard\Plugin\Permalink;
+namespace Kanboard\Plugin\KanboardPermalink;
 
 use Kanboard\Core\Plugin\Base;
+use Kanboard\Core\Translator;
 
 class Plugin extends Base
 {
     public function initialize()
     {
-        $this->template->hook->attach('template:task:dropdown', 'Permalink:task/permalink');
-        $this->template->hook->attach('template:task:sidebar:actions', 'Permalink:task/permalink');
-        $this->hook->on('template:layout:js', array('template' => 'plugins/Permalink/Assets/permalink.js'));
+        $this->template->hook->attach('template:task:dropdown:before-actions', 'KanboardPermalink:task/permalink');
+        $this->template->hook->attach('template:task:sidebar:before-actions', 'KanboardPermalink:task/permalink');
+        $this->hook->on('template:layout:js', array('template' => 'plugins/KanboardPermalink/Assets/js/permalink.js'));
     }
 
-    public function getCompatibleVersion()
+    public function onStartup()
     {
-        return '>=1.2.20';
+        Translator::load($this->languageModel->getCurrentLanguage(), __DIR__.'/Locale');
     }
 
-    public function getPluginVersion()
+    public function getPluginName()
     {
-        return '0.1.0';
+        // Plugin Name MUST be identical to namespace for Plugin Directory to detect updated versions
+        return 'KanboardPermalink';
     }
 
     public function getPluginDescription()
     {
-        return "Adds convenience function to copy project-independent links to tasks";
+        return t('Adds a convenient link to copy the task url to the clipboard');
     }
 
     public function getPluginAuthor()
     {
-        return 'Theobald Software GmbH';
+        return 'Theobald Software GmbH, aljawaid';
+    }
+
+    public function getPluginVersion()
+    {
+        return '1.0.0';
+    }
+
+    public function getCompatibleVersion()
+    {
+        // Examples:
+        // >=1.0.37
+        // <1.0.37
+        // <=1.0.37
+        return '>=1.2.20';
+    }
+
+    public function getPluginHomepage()
+    {
+        return 'https://github.com/theobald-software/KanboardPermalink';
     }
 }
