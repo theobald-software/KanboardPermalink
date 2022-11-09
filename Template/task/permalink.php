@@ -10,8 +10,8 @@
     );
 ?>
 
-<li>
-    <a id="permalink-link" href="<?= $permalink ?>">
-        <i class="fa fa-link fa-fw" aria-hidden="true" style="pointer-events:none"></i>Copy Permalink
+<li class="permalink">
+    <a href="<?= $permalink ?>" id="permalink-link" class="" title="<?= t('Copy the direct link to this task to the clipboard') ?>">
+        <i class="fa fa-link fa-fw" aria-hidden="true" style="pointer-events:none"></i> <?= t('Copy Permalink') ?>
     </a>
 </li>
