@@ -15,9 +15,8 @@ Features
 Screenshots
 ----------
 
-**title**
 
-![Screenshot Name](../master/screenshot-name.png "Read Screenshot Name")
+![Permalink](../master/screenshot-permalink.png "Permalink")
 
 Usage
 -------------
@@ -70,6 +69,8 @@ Translations
 ------------
 
 - English (UK)
+- French
+- German
 - _Contributors welcome_
 
 
@@ -77,6 +78,8 @@ Authors & Contributors
 ----------------------
 
 - [Theobald Software GmbH](https://github.com/theobald-software/KanboardPermalink) - Author
+- [Markus](https://github.com/schlafmodus) - Contributor
+- [Fritjof A. Mayer](https://github.com/fam2342) - Contributor
 - [@aljawaid](https://github.com/aljawaid) - Contributor
 - _Contributors welcome_
 
